@@ -22,6 +22,9 @@ function calculate(){
 	document.getElementById("strings").innerHTML = "";
 	string = document.getElementById("stringInput").innerHTML;
 	i = string.length;
+	if(i == 1){
+		print();
+	}
 	while( i > 1){
 		i1 = i;
 		while( i1 > 1){
@@ -57,17 +60,20 @@ function calculate(){
 			i1--;
 		}
 		string = newString;
-		para = document.createElement("p");
-		node = document.createTextNode(string);
-		para.appendChild(node);
-		element = document.getElementById("strings");
-		child = document.getElementById("stringBottom");
-		element.insertBefore(para,child);
+		print();
 		newString ="";
 		i--;
 	}
 }
 
+function print(){
+	para = document.createElement("p");
+	node = document.createTextNode(string);
+	para.appendChild(node);
+	element = document.getElementById("strings");
+	child = document.getElementById("stringBottom");
+	element.insertBefore(para,child);
+}
 function deleteS(){
 	document.getElementById("stringInput").innerHTML = "";
 	document.getElementById("strings").innerHTML = "";
